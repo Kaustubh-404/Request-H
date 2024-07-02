@@ -1,36 +1,64 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Request-Ease
 
-## Getting Started
+**Request-Ease** is a decentralized payments and invoicing management system built on top of the Request Network. It enables users to create invoices and accept payments in various forms, offering a seamless experience for handling crypto transactions.
 
-First, run the development server:
+## Features 🛠️
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+With Request-Ease, you can:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Create Invoices**: Generate invoices with detailed party information, payment options, and invoice specifics.
+- **Accept Payments**: Receive payments through various methods:
+  - Native Cryptocurrencies: ETH, MATIC, etc.
+  - ERC20 Tokens: DAI, USDC, etc.
+  - Bitcoin
+  - Fiat Currencies: USD, EUR, etc.
+  - Superfluid Streams
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Invoices adhere to the `rnf_invoice-0.0.3` schema standard by the Request Network.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Invoice Creation
 
-## Learn More
+The invoice creation process is streamlined and validated using `Zod` and `React Hook Form`, ensuring data accuracy and reliability. Invoices can also be downloaded as PDFs using `@react-pdf/renderer`.
 
-To learn more about Next.js, take a look at the following resources:
+### Payment Methods
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Payments can be made through:
+- Smart contract proxies
+- Token swaps
+- Direct payments
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Demo Video 🎥
 
-## Deploy on Vercel
+Experience Request-Ease in action by watching our [demo video](https://www.youtube.com/watch?v=l5eMEywt_TY).
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Tech Stack 🧑🏼‍💻
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Request-Ease leverages modern technologies to deliver a robust and intuitive user experience:
+
+- **Frontend**: Built with Next.js and styled using Tailwind CSS and shadcn UI components.
+- **Integration**: Seamlessly integrates with `@requestnetwork/request-client.js` for handling payment requests and processing.
+
+## Getting Started 🚀
+
+Request-Ease is organized as a turborepo and is divided into the following:
+
+- **apps/www**: The web application powered by Next.js.
+
+### Installation
+
+To get started with development, follow these steps:
+
+1. **Install dependencies**:
+
+   ```bash
+   npm install
+   ```
+2. **Configure environment variables: Populate the .env.local file in apps/www with the necessary environment variables.**
+
+  ```bash
+    NEXT_PUBLIC_WALLETCONNECT_ID="your_walletconnect_project_id"
+  ```
+3. **Run The Application**
+  ```bash
+  npm run dev
+  ```
